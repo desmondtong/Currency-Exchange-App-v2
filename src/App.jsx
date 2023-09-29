@@ -3,7 +3,7 @@ import { Route, Routes } from "react-router-dom";
 import useGet from "./Hooks/useGet";
 import NavBar from "./Components/NavBar";
 import Main from "./Pages/Main";
-// import FullGraph from "./Pages/FullGraph";
+import FullGraph from "./Pages/FullGraph";
 import About from "./Pages/About";
 import FullConverter from "./Pages/FullConverter";
 
@@ -225,7 +225,6 @@ const App = () => {
   return (
     <>
       <NavBar></NavBar>
-      {/* {JSON.stringify(selection)} */}
       <div className="container">
         <Routes>
           <Route
@@ -261,7 +260,7 @@ const App = () => {
               />
             }
           ></Route>
-          {/* <Route
+          <Route
             path="/graph"
             element={
               <FullGraph
@@ -272,7 +271,7 @@ const App = () => {
                 setWidgetInfo={setWidgetInfo}
               />
             }
-          ></Route> */}
+          ></Route>
           <Route path="/about-me" element={<About />}></Route>
         </Routes>
       </div>

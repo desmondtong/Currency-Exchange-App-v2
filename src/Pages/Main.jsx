@@ -23,7 +23,7 @@ function Main(props) {
               getConvert={props.getConvert}
             ></Converter>
           </div>
-          {/* <div className="row padding-1 border shadow graph">
+          <div className="row padding-1 border shadow graph">
             <div className="col-sm-10">
               <Graph
                 selection={props.selection}
@@ -34,7 +34,7 @@ function Main(props) {
                 isDashboard={true}
               ></Graph>
             </div>
-            <div className="col-sm-2">
+            {/* <div className="col-sm-2">
               {props.widgetInfo.map((item, idx) => {
                 return (
                   <Widget
@@ -54,8 +54,8 @@ function Main(props) {
                   return <EmptyWidget key={idx}></EmptyWidget>;
                 }
               )}
-            </div>
-          </div> */}
+            </div> */}
+          </div>
         </div>
         {/* <div className="col-sm-3 border shadow">
           <Watchlist
