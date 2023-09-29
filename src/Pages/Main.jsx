@@ -34,7 +34,7 @@ function Main(props) {
                 isDashboard={true}
               ></Graph>
             </div>
-            {/* <div className="col-sm-2">
+            <div className="col-sm-2">
               {props.widgetInfo.map((item, idx) => {
                 return (
                   <Widget
@@ -54,7 +54,7 @@ function Main(props) {
                   return <EmptyWidget key={idx}></EmptyWidget>;
                 }
               )}
-            </div> */}
+            </div>
           </div>
         </div>
         {/* <div className="col-sm-3 border shadow">
