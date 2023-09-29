@@ -33,7 +33,7 @@ const CurrencyCard = (props) => {
 
   const handleDisplayConvert = () => {
     if (props.to && props.convert.rates)
-      inputRef.current.value = Object.values(props.convert.rates);
+      inputRef.current.value = Object.values(props.convert.rates)[0];
   };
 
   // to reverse symbol after button clicked

@@ -1,9 +1,8 @@
 import React from "react";
-import { json } from "react-router-dom";
 
 const ConverterCard = (props) => {
-  const from = props.currSymbol[props.from]?.description;
-  const to = props.currSymbol[props.to]?.description;
+  const from = props.currSymbol[props.from];
+  const to = props.currSymbol[props.to];
   const forMap = [1, 5, 10, 25, 50, 100, 1000, 5000, 10000];
   return (
     <>

@@ -5,7 +5,7 @@ import NavBar from "./Components/NavBar";
 import Main from "./Pages/Main";
 // import FullGraph from "./Pages/FullGraph";
 import About from "./Pages/About";
-// import FullConverter from "./Pages/FullConverter";
+import FullConverter from "./Pages/FullConverter";
 
 const App = () => {
   const defaultCurrency = { from: "SGD", to: "MYR" };
@@ -246,7 +246,7 @@ const App = () => {
               />
             }
           ></Route>
-          {/* <Route
+          <Route
             path="/converter"
             element={
               <FullConverter
@@ -261,7 +261,7 @@ const App = () => {
               />
             }
           ></Route>
-          <Route
+          {/* <Route
             path="/graph"
             element={
               <FullGraph
