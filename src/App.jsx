@@ -3,9 +3,9 @@ import { Route, Routes } from "react-router-dom";
 import useGet from "./Hooks/useGet";
 import NavBar from "./Components/NavBar";
 import Main from "./Pages/Main";
-import FullGraph from "./Pages/FullGraph";
+// import FullGraph from "./Pages/FullGraph";
 import About from "./Pages/About";
-import FullConverter from "./Pages/FullConverter";
+// import FullConverter from "./Pages/FullConverter";
 
 const App = () => {
   const defaultCurrency = { from: "SGD", to: "MYR" };
@@ -203,14 +203,14 @@ const App = () => {
 
   const getConvert = async () => {
     const data = await getData(
-      `convert?from=${selection.from}&to=${selection.to}&amount=${selection.amount}&date=${selection.date}`
+      `${selection.date}?amount=${selection.amount}&from=${selection.from}&to=${selection.to}`
     );
     setConvert(data);
   };
 
   const getCurrSymbol = async () => {
-    const data = await getData("symbols");
-    setcurrSymbol(data.symbols);
+    const data = await getData("currencies");
+    setcurrSymbol(data);
   };
 
   // subtract date
@@ -246,7 +246,7 @@ const App = () => {
               />
             }
           ></Route>
-          <Route
+          {/* <Route
             path="/converter"
             element={
               <FullConverter
@@ -272,7 +272,7 @@ const App = () => {
                 setWidgetInfo={setWidgetInfo}
               />
             }
-          ></Route>
+          ></Route> */}
           <Route path="/about-me" element={<About />}></Route>
         </Routes>
       </div>

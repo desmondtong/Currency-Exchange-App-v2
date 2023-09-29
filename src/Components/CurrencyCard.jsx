@@ -32,7 +32,8 @@ const CurrencyCard = (props) => {
   };
 
   const handleDisplayConvert = () => {
-    if (props.to) inputRef.current.value = props.convert.result;
+    if (props.to && props.convert.rates)
+      inputRef.current.value = Object.values(props.convert.rates);
   };
 
   // to reverse symbol after button clicked
@@ -46,7 +47,7 @@ const CurrencyCard = (props) => {
   // to display converted rate
   useEffect(() => {
     handleDisplayConvert();
-  }, [props.convert.result]);
+  }, [props.convert.rates]);
 
   useEffect(() => {
     handleSelection();
@@ -60,10 +61,10 @@ const CurrencyCard = (props) => {
           onChange={handleSelect}
           className="boxes boxes-h select"
         >
-          {Object.values(props.currSymbol).map((item, idx) => {
+          {Object.keys(props.currSymbol).map((item, idx) => {
             return (
-              <option key={idx} value={item.code}>
-                {`${item.code} - ${item.description} ${props.emojiFlags[item.code]}`}
+              <option key={idx} value={item}>
+                {`${item} - ${props.currSymbol[item]} ${props.emojiFlags[item]}`}
               </option>
             );
           })}

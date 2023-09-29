@@ -29,7 +29,6 @@ const Converter = (props) => {
   //use effect
   useEffect(() => {
     props.getCurrSymbol();
-    console.log("useEff run");
   }, []);
 
   useEffect(() => {

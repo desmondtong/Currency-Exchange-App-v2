@@ -23,7 +23,7 @@ function Main(props) {
               getConvert={props.getConvert}
             ></Converter>
           </div>
-          <div className="row padding-1 border shadow graph">
+          {/* <div className="row padding-1 border shadow graph">
             <div className="col-sm-10">
               <Graph
                 selection={props.selection}
@@ -55,16 +55,16 @@ function Main(props) {
                 }
               )}
             </div>
-          </div>
+          </div> */}
         </div>
-        <div className="col-sm-3 border shadow">
+        {/* <div className="col-sm-3 border shadow">
           <Watchlist
             todayDate={props.todayDate}
             historyDate={props.historyDate}
             currSymbol={props.currSymbol}
             emojiFlags={props.emojiFlags}
           ></Watchlist>
-        </div>
+        </div> */}
       </div>
       {/* </div> */}
     </>
