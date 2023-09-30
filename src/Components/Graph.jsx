@@ -33,9 +33,12 @@ const Graph = (props) => {
       startDate = props.historyDate(0, 0, -1);
     }
 
+    const data = await getData(`latest?to=USD`);
+    const todayDate = data.date;
+
     // get time-series data
     const dataTimeSeries = await getData(
-      `${startDate}..${props.todayDate}?&from=${props.selection.from}&to=${props.selection.to}`
+      `${startDate}..${todayDate}?&from=${props.selection.from}&to=${props.selection.to}`
     );
     setTimeSeries(
       Object.entries(dataTimeSeries.rates).map((item) => {
@@ -48,7 +51,7 @@ const Graph = (props) => {
 
     // get fluctuation
     const firstRate = Object.values(dataTimeSeries.rates[startDate])[0];
-    const lastRate = Object.values(dataTimeSeries.rates[props.todayDate])[0];
+    const lastRate = Object.values(dataTimeSeries.rates[todayDate])[0];
     const chgPercentage =
       Math.ceil(((lastRate - firstRate) / firstRate) * 10000) / 100;
     setFluctuation({ chgPercentage, timeframe });
@@ -71,9 +74,6 @@ const Graph = (props) => {
           );
         })
       ) {
-        // alert(
-        //   `${props.selection.from}/${props.selection.to} is already added!`
-        // );
         setOpenRepeat(true);
         return [...currState];
       } else {

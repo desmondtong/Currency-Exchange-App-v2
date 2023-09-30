@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
 import useGet from "./Hooks/useGet";
 import NavBar from "./Components/NavBar";
@@ -9,7 +9,7 @@ import FullConverter from "./Pages/FullConverter";
 
 const App = () => {
   const defaultCurrency = { from: "SGD", to: "MYR" };
-  const todayDate = new Date().toISOString().split("T")[0];
+  // const todayDate = new Date().toISOString().split("T")[0];
   const emojiFlags = {
     AED: "🇦🇪",
     AFN: "🇦🇫",
@@ -187,6 +187,7 @@ const App = () => {
   // state for API endpoints (GET)
   const [currSymbol, setcurrSymbol] = useState({});
   const [convert, setConvert] = useState({ result: 1 });
+  const [todayDate, setTodayDate] = useState("");
 
   // state
   const [selection, setSelection] = useState({
@@ -221,6 +222,16 @@ const App = () => {
     date.setFullYear(date.getFullYear() + years);
     return date.toISOString().split("T")[0];
   };
+
+  // determine todayDate/last updated date
+  const determineTodayDate = async () => {
+    const data = await getData(`latest?to=USD`);
+    setTodayDate(data.date);
+  };
+
+  useEffect(() => {
+    determineTodayDate();
+  }, []);
 
   return (
     <>
