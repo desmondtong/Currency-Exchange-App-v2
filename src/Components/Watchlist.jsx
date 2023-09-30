@@ -252,7 +252,7 @@ const Watchlist = (props) => {
               >
                 <div className="row fav-currency">
                   <div
-                    className={isEdit ? "col-sm-2" : "col-sm-2"}
+                    className={isEdit ? "col-sm-2 cursor-pointer" : "col-sm-2 cursor-pointer"}
                     id={idx}
                     onClick={handleBaseCurr}
                   >

@@ -250,3 +250,7 @@ li {
   margin: auto;
   margin-top: 25%;
 }
+
+.cursor-pointer {
+  cursor: pointer;
+}

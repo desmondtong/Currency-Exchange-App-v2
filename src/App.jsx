@@ -227,6 +227,9 @@ const App = () => {
   const determineTodayDate = async () => {
     const data = await getData(`latest?to=USD`);
     setTodayDate(data.date);
+    setSelection((currState) => {
+      return { ...currState, date: data.date };
+    });
   };
 
   useEffect(() => {

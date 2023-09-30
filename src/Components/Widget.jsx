@@ -78,7 +78,7 @@ const Widget = (props) => {
 
   return (
     <>
-      <div className="row widget widget-hover border">
+      <div className="row widget widget-hover border cursor-pointer">
         <div className="row widget-item">
           <div className="col-sm-9 widget-sym">
             {props.sym}
