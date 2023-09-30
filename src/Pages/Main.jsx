@@ -57,14 +57,14 @@ function Main(props) {
             </div>
           </div>
         </div>
-        {/* <div className="col-sm-3 border shadow">
+        <div className="col-sm-3 border shadow">
           <Watchlist
             todayDate={props.todayDate}
             historyDate={props.historyDate}
             currSymbol={props.currSymbol}
             emojiFlags={props.emojiFlags}
           ></Watchlist>
-        </div> */}
+        </div>
       </div>
       {/* </div> */}
     </>
