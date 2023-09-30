@@ -9,7 +9,6 @@ import FullConverter from "./Pages/FullConverter";
 
 const App = () => {
   const defaultCurrency = { from: "SGD", to: "MYR" };
-  // const todayDate = new Date().toISOString().split("T")[0];
   const emojiFlags = {
     AED: "🇦🇪",
     AFN: "🇦🇫",
@@ -224,6 +223,7 @@ const App = () => {
   };
 
   // determine todayDate/last updated date
+  // Frankfurter uses European Central Bank data that only update the rate at around 16:00 CET every working day, except on TARGET closing days.
   const determineTodayDate = async () => {
     const data = await getData(`latest?to=USD`);
     setTodayDate(data.date);
