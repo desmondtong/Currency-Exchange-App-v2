@@ -1,16 +1,12 @@
-> THE DEPLOYED SITE IS NO LONGER WORKING AS THERE IS A DRASTIC CHANGE IN THE API OF THE 3RD PARTY API USED.
-
-
----
 ![Frame 60](https://github.com/desmondtong/Currency-Exchange-App/assets/107420497/58d34e1e-4660-4da1-8b89-c3375f5375fe)
 
 # CurrenSee (Currency Converter)
 ## Introduction
-CurrenSee is a user-friendly and intuitive **React App** that provides you with a comprehensive set of tools for currency conversion and exchange rate tracking. Leveraging the powerful [Exchangerate.host](https://exchangerate.host/#/) API, CurrenSee allows you to effortlessly check real-time currency conversion rates, explore historical rate trends through interactive graphs, and manage your favorite currencies with a personalized watchlist.
+CurrenSee is a user-friendly and intuitive **React App** that provides you with a comprehensive set of tools for currency conversion and exchange rate tracking. Leveraging the powerful [Frankfurter](https://www.frankfurter.app) API, CurrenSee allows you to effortlessly check real-time currency conversion rates, explore historical rate trends through interactive graphs, and manage your favorite currencies with a personalized watchlist.
 
 Feel free to explore the app [here](https://curren-see.netlify.app).
 
->p/s: the currency rate are refreshed daily
+>p/s: the currency rate are refreshed daily at around 16:00 CET every working day, except on TARGET closing days. Refer [here](https://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/html/index.en.html) for more details.
 
 ---
 ## App Overview
@@ -57,7 +53,7 @@ Discover more about the creator behind this humble app (that's me!).
 - Chart.js
 
 ### API
-- Exchangerate.host
+- Frankfurter
 
 ---
 ## References & Credits
@@ -70,7 +66,7 @@ Discover more about the creator behind this humble app (that's me!).
 - [Currency Dashboard by Vitaliy Malyushko](https://dribbble.com/shots/7242468-Currency-dashboard-with-UI-Animation)
 
 ### API documentation
-- [Exchangerate.host](https://exchangerate.host/#/docs)
+- [Frankfurter](https://www.frankfurter.app)
 
 ### JavaScript & JSX
 - [MDN Web Docs - input/date](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/date)
