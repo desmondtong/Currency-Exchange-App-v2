@@ -119,7 +119,10 @@ const Watchlist = (props) => {
       });
 
       // calculate fluctuation
-      const firstRate = dataTimeSeries.rates[startDate][sym];
+      // startDate might be weekend, the API only have data on WEEKDAYS
+      const firstDate = Object.keys(dataTimeSeries.rates)[0];
+
+      const firstRate = dataTimeSeries.rates[firstDate][sym];
       const lastRate = dataTimeSeries.rates[todayDate][sym];
       const fluc =
         Math.ceil(((lastRate - firstRate) / firstRate) * 10000) / 100;
@@ -252,7 +255,11 @@ const Watchlist = (props) => {
               >
                 <div className="row fav-currency">
                   <div
-                    className={isEdit ? "col-sm-2 cursor-pointer" : "col-sm-2 cursor-pointer"}
+                    className={
+                      isEdit
+                        ? "col-sm-2 cursor-pointer"
+                        : "col-sm-2 cursor-pointer"
+                    }
                     id={idx}
                     onClick={handleBaseCurr}
                   >

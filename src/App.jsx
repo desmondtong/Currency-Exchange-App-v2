@@ -215,7 +215,7 @@ const App = () => {
 
   // subtract date
   const historyDate = (days, months, years) => {
-    var date = new Date();
+    const date = new Date();
     date.setDate(date.getDate() + days);
     date.setMonth(date.getMonth() + months);
     date.setFullYear(date.getFullYear() + years);

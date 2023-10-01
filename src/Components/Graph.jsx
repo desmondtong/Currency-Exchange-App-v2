@@ -50,7 +50,10 @@ const Graph = (props) => {
     );
 
     // get fluctuation
-    const firstRate = Object.values(dataTimeSeries.rates[startDate])[0];
+    // startDate might be weekend, the API only have data on WEEKDAYS
+    const firstDate = Object.keys(dataTimeSeries.rates)[0];
+
+    const firstRate = Object.values(dataTimeSeries.rates[firstDate])[0];
     const lastRate = Object.values(dataTimeSeries.rates[todayDate])[0];
     const chgPercentage =
       Math.ceil(((lastRate - firstRate) / firstRate) * 10000) / 100;
